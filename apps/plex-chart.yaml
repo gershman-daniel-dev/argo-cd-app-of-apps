@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: plex-chart
-  namespace: plex-chart
+  namespace: argocd-apps
 spec:
   project: default
 
