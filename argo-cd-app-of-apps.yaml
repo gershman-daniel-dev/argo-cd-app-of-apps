@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: actual-budget
+  name: argo-cd-app-of-apps
   namespace: argocd
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/gershman-daniel-dev/actual-budget
+    repoURL: https://github.com/gershman-daniel-dev/argo-cd-app-of-apps.git
     targetRevision: HEAD
-    path: "./"
+    path: "./apps"
   destination:
     server: https://kubernetes.default.svc
-    namespace: actual-budget
+    namespace: argo-cd-app-of-apps
 
   syncPolicy:
     syncOptions:
